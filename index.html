@@ -1,5 +1,46 @@
-<h1>test</h1>
-<p>
-    asafsasd
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sayı Tahmin Oyunu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #container {
+            text-align: center;
+            margin: 100px auto;
+        }
+        #output {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Sayı Tahmin Oyunu</h1>
+        <p>Tahmin etmek istediğiniz sayıyı 1 ile 100 arasında girin.</p>
+        <input type="number" id="guess" min="1" max="100">
+        <button onclick="checkGuess()">Tahmin Et</button>
+        <p id="output"></p>
+    </div>
 
-</p>
+    <script>
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        var tries = 0;
+
+        function checkGuess() {
+            var guess = document.getElementById("guess").value;
+            tries++;
+
+            if (guess == randomNumber) {
+                document.getElementById("output").innerHTML = "Tebrikler! " + tries + " denemede doğru tahmin ettiniz.";
+            } else if (guess < randomNumber) {
+                document.getElementById("output").innerHTML = "Daha yüksek bir sayı tahmin edin.";
+            } else {
+                document.getElementById("output").innerHTML = "Daha düşük bir sayı tahmin edin.";
+            }
+        }
+    </script>
+</body>
+</html>
