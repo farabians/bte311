@@ -1,46 +1,29 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Sayı Tahmin Oyunu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        #container {
-            text-align: center;
-            margin: 100px auto;
-        }
-        #output {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-    </style>
+<meta charset="utf-8">
+<title>HTML5 ÖRNEĞİ</title>
 </head>
 <body>
-    <div id="container">
-        <h1>Sayı Tahmin Oyunu</h1>
-        <p>Tahmin etmek istediğiniz sayıyı 1 ile 100 arasında girin.</p>
-        <input type="number" id="guess" min="1" max="100">
-        <button onclick="checkGuess()">Tahmin Et</button>
-        <p id="output"></p>
-    </div>
-
-    <script>
-        var randomNumber = Math.floor(Math.random() * 100) + 1;
-        var tries = 0;
-
-        function checkGuess() {
-            var guess = document.getElementById("guess").value;
-            tries++;
-
-            if (guess == randomNumber) {
-                document.getElementById("output").innerHTML = "Tebrikler! " + tries + " denemede doğru tahmin ettiniz.";
-            } else if (guess < randomNumber) {
-                document.getElementById("output").innerHTML = "Daha yüksek bir sayı tahmin edin.";
-            } else {
-                document.getElementById("output").innerHTML = "Daha düşük bir sayı tahmin edin.";
-            }
-        }
-    </script>
+<header>
+<h1>HTML5 TAGLARI< Başlık 1/h1>
+<p>Bu sayfa farklı tarayıcılarda denenmelidir.</p>
+</header>
+<nav>
+<ul>
+<li><a href="https://validator.w3.org/">HTML kodununun uygunluğunu test edin</a></li>
+<li><a href="https://jsfiddle.net/">HTML kodlarınızı deneyin</a></li>
+<li><a href="https://www.000webhost.com">Sunucuda deneme yapın </a></li>
+</ul></nav>
+<article>
+<section>
+<p>Article birden fazla section içerebilir.</p>
+</section>
+</article>
+<aside>
+<p>aside kısmı</p>
+</aside>
+<footer>
+<p>Hacettepe Üniversitesi-footer</p>
+</footer>
 </body>
 </html>
