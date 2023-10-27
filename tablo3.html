@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>tablo3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 80%; /* Genişletildi */
+            background-color: #f7f7f7; /* Gri arka plan eklendi */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Lütfen Formu Eksiksiz Doldurunuz.</h1>
+    </header>
+    <form>
+        <table border="1">
+            <tr>
+                <td colspan="2">
+                    <h4>Hesap Bilgileriniz</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>Kullanıcı Adı :</td>
+                <td><input type="text" name="username" placeholder="Kullanıcı adı giriniz" required></td>
+            </tr>
+            <tr>
+                <td>Eposta :</td>
+                <td><input type="email" name="eposta" placeholder="Eposta giriniz" required></td>
+            </tr>
+            <tr>
+                <td>Parola :</td>
+                <td><input type="password" name="parola" placeholder="Parola giriniz" required></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h4>Kişisel Bilgileriniz</h4>
+                </td>
+            </tr>
+            <tr>
+                <td> Ad:</td>
+                <td><input type="text" name="ad"></td>
+            </tr>
+            <tr>
+                <td>Soyad :</td>
+                <td><input type="text" name="soyad"></td>
+            </tr>
+            <tr>
+                <td>Şehir :</td>
+                <td>
+                    <select name="sehir">
+                        <option>Seçiniz</option>
+                        <option>Ankara</option>
+                        <option>İstanbul</option>
+                        <option>Konya</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Cinsiyet :</td>
+                <td>
+                    <input type="radio" name="cinsiyet"> Erkek
+                    <input type="radio" name="cinsiyet"> Kadın
+                </td>
+            </tr>
+            <tr>
+                <td>Hobileriniz :</td>
+                <td>
+                    <input type="checkbox" name="hobiler">Sinema
+                    <input type="checkbox" name="hobiler">Gezmek
+                    <input type="checkbox" name="hobiler">Spor
+                    <input type="checkbox" name="hobiler">Kitap
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Kaydet">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
