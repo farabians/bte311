@@ -1,98 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8" />
-    <title>Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+  <title>Abdul Samet Dündar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
 
-        h2 {  
-            background-color: #333;
-            color: #fff;
-            padding: 30px;
-            margin: 0;
-        }
+    h2 {
+	  margin-top: 0;
+      background-color: #333;
+      color: #fff;
+      padding: 30px;
+    }
 
-        form {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        table {
-            width: 100%;
-        }
+    div {
+      margin: 10px;
+    }
 
-        td {
-            padding: 10px;
-        }
+    label {
+      display: block;
+      text-align: left;
+    }
 
-        label {
-            display: block;
-            text-align: right;
-        }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-        }
+    input[type="submit"] {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
 
-        a {
-            text-decoration: none;
-            color: #007BFF;
-        }
-
-        input[type="submit"] {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
-<body>  
-    <h2>Netflix Üyelik Formu</h2>
-    <form method="post" target="_blank">
-        <table>
-            <tr>
-                <td><label for="ad">Adınız:</label></td>
-                <td><input type="text" name="ad" id="ad" required></td>
-            </tr> 
-            <tr>
-                <td><label for="soyad">Soyadınız:</label></td>
-                <td><input type="text" name="soyad" id="soyad" required></td>
-            </tr>
-            <tr>
-                <td><label for="email">E-posta:</label></td>
-                <td><input type="email" name="email" id="email" required></td>
-            </tr>
-            <tr>
-                <td><label for="şifre">Şifre:</label></td>
-                <td><input type="password" name="şifre" id="şifre" required></td>
-            </tr>
-            <tr>
-                <td><a href="sifre.html">Şifremi Unuttum</a></td>
-                <td></td>
-                <td><input type="submit" value="Kayıt Ol"></td>
-            </tr>
-        </table>
-    </form>
+<body>
+  <h2>Üyelik Formu</h2>
+  <form action="/kayit" method="post">
+    <div>
+      <label for="ad">Adı:</label>
+      <input type="text" id="ad" name="ad" required>
+    </div>
+    <div>
+      <label for="soyad">Soyadı:</label>
+      <input type="text" id="soyad" name="soyad" required>
+    </div>
+    <div>
+      <label for="dogum_tarihi">Doğum Tarihi:</label>
+      <input type="date" id="dogum_tarihi" name="dogum_tarihi" required>
+    </div>
+    <div>
+      <label for="email">E-Posta Adresi:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <label for="telefon">Telefon Numarası:</label>
+      <input type="tel" id="telefon" name="telefon" required>
+    </div>
+    <div>
+      <input type="submit" value="Kayıt Yap">
+    </div>
+  </form>
 </body>
 </html>
