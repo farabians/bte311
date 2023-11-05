@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Testi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            background-color: #333;
+            color: #fff;
+            padding: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3, input[type="radio"] {
+            text-align: left;
+        }
+
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #sonuc {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        #cevaplar {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <h2>HTML Testi</h2>
+    <form id="testForm">
+        <h3>Soru 1: HTML'nin açılımı nedir?</h3>
+        <input type="radio" name="soru1" value="a"> a) Hypertext Markup Language<br>
+        <input type="radio" name="soru1" value="b"> b) Hyper Transfer Markup Language<br>
+        <input type="radio" name="soru1" value="c"> c) High-Level Text Management Language<br>
+
+        <h3>Soru 2: Bir HTML belgesi hangi dosya uzantısına sahiptir?</h3>
+        <input type="radio" name="soru2" value="a"> a) .txt<br>
+        <input type="radio" name="soru2" value="b"> b) .html<br>
+        <input type="radio" name="soru2" value="c"> c) .css<br>
+
+        <h3>Soru 3: HTML'de metin biçimlendirme için hangi etiket kullanılır?</h3>
+        <input type="radio" name="soru3" value="a"> a) &lt;format&gt;<br>
+        <input type="radio" name="soru3" value="b"> b) &lt;style&gt;<br>
+        <input type="radio" name="soru3" value="c"> c) &lt;strong&gt;<br>
+
+        <h3>Soru 4: HTML'de sayfa başlığını belirlemek için hangi etiket kullanılır?</h3>
+        <input type="radio" name="soru4" value="a"> a) &lt;header&gt;<br>
+        <input type="radio" name="soru4" value="b"> b) &lt;title&gt;<br>
+        <input type="radio" name="soru4" value="c"> c) &lt;h1&gt;<br>
+
+        <h3>Soru 5: HTML'de resim eklemek için hangi etiket kullanılır?</h3>
+        <input type="radio" name="soru5" value="a"> a) &lt;img&gt;<br>
+        <input type="radio" name="soru5" value="b"> b) &lt;picture&gt;<br>
+        <input type="radio" name="soru5" value="c"> c) &lt;image&gt;<br>
+
+        <input type="submit" value="Testi Gönder">
+    </form>
+    <div id="sonuc"></div>
+    <div id="cevaplar"></div>
+
+    <script>
+        document.getElementById("testForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var dogruCevaplar = {
+                soru1: "a",
+                soru2: "b",
+                soru3: "c",
+                soru4: "b",
+                soru5: "a",
+            };
+
+            var cevaplar = {};
+            var cevapSonuclari = {};
+
+            for (var i = 1; i <= 5; i++) {
+                var soru = "soru" + i;
+                var secenekler = document.getElementsByName(soru);
+
+                for (var j = 0; j < secenekler.length; j++) {
+                    if (secenekler[j].checked) {
+                        cevaplar[soru] = secenekler[j].value;
+                        break;
+                    }
+                }
+
+                if (cevaplar[soru] === dogruCevaplar[soru]) {
+                    cevapSonuclari[soru] = "Doğru";
+                } else {
+                    cevapSonuclari[soru] = "Yanlış";
+                }
+            }
+
+            var dogruSayisi = 0;
+            var yanlisSayisi = 0;
+            var cevaplarHTML = "<h3>Cevaplar:</h3>";
+
+            for (var soru in dogruCevaplar) {
+                cevaplarHTML += `<p>Soru ${soru.substring(4)}: ${cevapSonuclari[soru]}</p>`;
+
+                if (cevaplar[soru] === dogruCevaplar[soru]) {
+                    dogruSayisi++;
+                } else {
+                    yanlisSayisi++;
+                }
+            }
+
+            var sonucMetni = "Toplam doğru cevap sayısı: " + dogruSayisi + "<br>Toplam yanlış cevap sayısı: " + yanlisSayisi;
+            document.getElementById("sonuc").innerHTML = sonucMetni;
+            document.getElementById("cevaplar").innerHTML = cevaplarHTML;
+        });
+    </script>
+</body>
+</html>
