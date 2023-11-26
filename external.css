@@ -1,0 +1,34 @@
+             body {
+                font-family: Arial, sans-serif;
+                background-color: #f7f7f7;
+                margin: 0;
+            }
+
+            table {
+                width:  "50%";
+                margin: 0 auto;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 20px;
+            }
+
+            th {
+                background-color: #333;
+                color: #fff;
+            }
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+            .ders1 { background-color: #ffd700; }
+            .ders2 { background-color: #00ff00; }
+            .ders3 { background-color: rgb(128, 82, 172); }
+            .ders4 { background-color: #df5f94; }
+            .ders5 { background-color: #006eff; }
+            .ders6 { background-color: #ff00ff; }
+            .ders7 { background-color: #63aac0; }
+            .ders8 { background-color: #00ffc8; }
+            .ders9 { background-color: #ff7b00; }
+            .ders10 { background-color: #eb3b3b; }
+            .ders11 { background-color: #00c3ff; }
