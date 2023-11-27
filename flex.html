@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Container</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      margin: 5px;
+      color: white;
+      font-size: 24px;
+    }
+
+    .kapak { background-color: #3498db; }
+    .icindekiler { background-color: #2ecc71; }
+    .onsoz { background-color: #f1c40f; }
+    .bolum1 { background-color: #e74c3c; }
+    .bolum2 { background-color: #9b59b6; }
+    .login { background-color: #34495e; }
+
+    /* @media özelliği kullanarak ekran genişliğine göre düzenleme yapma */
+    @media screen and (max-width: 600px) {
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        width: 90%;
+        margin: 5px auto;
+      }
+    }
+
+    /* 600px üstünde row yapısı ile sunma */
+    @media screen and (min-width: 601px) {
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container kapak">
+    Kapak
+  </div>
+  <div class="container icindekiler">
+    İçindekiler
+  </div>
+  <div class="container onsoz">
+    Önsöz
+  </div>
+  <div class="container bolum1">
+    Bölüm 1
+  </div>
+  <div class="container bolum2">
+    Bölüm 2
+  </div>
+  <div class="container login">
+    Login
+  </div>
+</body>
+</html>
