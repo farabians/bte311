@@ -8,6 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+      height: 100vh;
     }
 
     .container {
@@ -38,12 +39,16 @@
       }
     }
     @media screen and (min-width: 601px) {
-      body {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-      }
-    }
+  body {
+    display: flex;
+    justify-content: center; 
+  }
+  .container {
+    flex: 1 1 30%;
+    max-width: 200px; 
+    margin: 5px; 
+  }
+}
   </style>
 </head>
 <body>
