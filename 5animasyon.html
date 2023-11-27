@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animations</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 100px;
+      height:100px;
+      border-radius: 30%;
+      margin:20px;
+      position: relative; 
+      overflow: hidden; 
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    .face {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+
+    
+    .anim1 {
+      background-color: #3498db;
+      animation-name: upDown;
+    }
+
+    
+    .anim2 {
+      background-color: #2ecc71;
+      animation-name: growShrink;
+    }
+
+    
+    .anim3 {
+      background-color: #f10f9a;
+      animation-name: fade;
+    }
+
+    
+    .anim4 {
+      background-color: #e74c3c;
+      animation-name: rightLeft;
+    }
+
+    .anim5 {
+      background-color: #9b59b6;
+      animation-name: rotate;
+    }
+    .anim1 .face:before {
+      content: '😊';
+    }
+
+    .anim2 .face:before {
+      content: '😲';
+    }
+
+    .anim3 .face:before {
+      content: '😎';
+    }
+
+    .anim4 .face:before {
+      content: '😠';
+    }
+
+    .anim5 .face:before {
+      content: '🤪';
+    }
+
+    @keyframes upDown {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(50px);
+      }
+    }
+
+    @keyframes growShrink {
+      0%, 100% {
+        transform: scale(1);
+        background-color: #2ecc48;
+      }
+      50% {
+        transform: scale(1.5);
+        background-color: rgb(165, 8, 8);
+      }
+    }
+
+    @keyframes fade {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+
+    @keyframes rightLeft {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(40px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes rotate {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container anim1"><div class="face"></div></div>
+  <div class="container anim2"><div class="face"></div></div>
+  <div class="container anim3"><div class="face"></div></div>
+  <div class="container anim4"><div class="face"></div></div>
+  <div class="container anim5"><div class="face"></div></div>
+</body>
+</html>
