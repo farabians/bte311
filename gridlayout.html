@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grit Layout Örneği</title>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 150px);
+      gap: 10px;
+    }
+    .grid-item {
+      text-align: center;
+      color: rgb(0, 0, 0);
+      font-size: 1.5em;
+      border: 2px solid black;
+    }
+    .grid-item.dikdortgen {
+      background-color: rgba(231, 198, 12, 0.8);
+      grid-column: span 3;
+      grid-row: span 1;
+      padding: 20px;
+    }
+    .grid-item.kare {
+      background-color: rgb(0, 94, 172);
+      padding: 30px;
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+    .grid-item.uzun {
+      background-color: rgb(247, 4, 4);
+      padding: 25px;
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .grid-item.kisa {
+      background-color: rgb(24, 172, 11);
+      padding: 20px;
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item dikdortgen" style="background-color: rgba(255, 0, 0, 0.5)">A</div>
+    <div class="grid-item kare" style="background-color: rgba(0, 255, 0, 0.5)">B</div>
+    <div class="grid-item kare" style="background-color: rgba(0, 0, 255, 0.5)">C</div>
+    <div class="grid-item kare" style="background-color: rgba(255, 255, 0, 0.5)">D</div>
+    <div class="grid-item uzun" style="background-color: rgba(255, 0, 255, 0.5)">E</div>
+    <div class="grid-item kisa" style="background-color: rgba(0, 255, 255, 0.5)">F</div>
+    <div class="grid-item dikdortgen" style="background-color: rgba(128, 128, 128, 0.5)">G</div>
+  </div>
+</body>
+</html>
