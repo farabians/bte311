@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastgele Görsel Oluşturma</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s ease;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .image {
+            max-width: calc(33.33% - 10px);
+            margin: 5px;
+            height: auto;
+            display: none;
+        }
+
+        .button-container {
+            display: flex;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .random-image-button, .show-all-button {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        changeBackgroundColor();
+        showImages();
+        setupRandomImageButton();
+        setupShowAllButton();
+    });
+
+    function changeBackgroundColor() {
+        var backgroundColors = ["#ff9999", "#99ff99", "#9999ff", "#ffff99", "#ffcc99", "#cc99ff", "#99ccff", "#ffccff", "#ccffff", "#cccccc"];
+        var randomColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)];
+        document.body.style.backgroundColor = randomColor;
+    }
+
+    function showImages() {
+        var imageContainer = document.querySelector(".image-container");
+
+        var images = [
+            "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2022/05/31/m4a4-howl.jpg",
+            "https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2022/05/31/fire-serpent-ak47.jpg",
+            "https://cdn.mos.cms.futurecdn.net/24FrWJbk9x4eB95HcftHTj.jpg",
+            "https://broskins.com/index.php?media/souvenir-awp-dragon-lore-fn-fnatic-foil-katowice-2014.1680/full",
+            "https://csgobluegem.com/wp-content/uploads/2020/07/Karambit-Blue-Gem-Shine-Artwork-DUEL_IxI_TOXIC.jpg",
+            "https://res.cloudinary.com/pley-gg/image/upload/c_fill,w_900/wp10451836-csgo-skins-wallpapers_grz1di",
+            "https://skinsmonkey.com/blog/wp-content/uploads/sites/2/shining-gold-arabesque-wallpaper.jpg",
+            "https://i.pinimg.com/originals/6f/3a/cc/6f3acc1c0a909de194771420985a4a7c.jpg",
+            "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/216411236/original/d3a87e4e0e01bf587bdfbd645b5096a6c3c2e3e0/make-csgo-skin-images-for-you.png",
+            "https://c4.wallpaperflare.com/wallpaper/302/760/892/white-game-csgo-wallpaper-preview.jpg",
+        ];
+
+        for (var i = 0; i < images.length; i++) {
+            var img = document.createElement("img");
+            img.src = images[i];
+            img.alt = "Resim " + (i + 1);
+            img.className = "image";
+            imageContainer.appendChild(img);
+        }
+    }
+
+    function setupRandomImageButton() {
+        var randomImageButton = document.querySelector(".random-image-button");
+        randomImageButton.addEventListener("click", function() {
+            showRandomImage();
+        });
+    }
+
+    function setupShowAllButton() {
+        var showAllButton = document.querySelector(".show-all-button");
+        showAllButton.addEventListener("click", function() {
+            showAllImages();
+        });
+    }
+
+    function showRandomImage() {
+        var images = document.querySelectorAll(".image");
+
+        // Tüm resimleri gizle
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+
+        // Belirli bir resmi göster
+        var randomIndex = Math.floor(Math.random() * images.length);
+        images[randomIndex].style.display = "block";
+    }
+
+    function showAllImages() {
+        var images = document.querySelectorAll(".image");
+
+        // Tüm resimleri göster
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = "block";
+        }
+    }
+</script>
+
+<div class="button-container">
+    <button class="random-image-button">Rastgele Görsel Oluştur</button>
+    <button class="show-all-button">Tümünü Göster</button>
+</div>
+
+<div class="image-container"></div>
+
+</body>
+</html>
