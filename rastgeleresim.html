@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rastgele Görsel Oluşturma</title>
+    <title>CS2 Oyunun En Pahalı Itemleri (1000 Dolar - 1.5 Milyon Dolar)</title>
     <style>
         body {
             margin: 0;
@@ -38,8 +38,14 @@
             justify-content: center;
         }
 
-        .random-image-button, .show-all-button {
+        .random-image-button, .show-all-button, .hide-all-button {
             margin: 0 10px;
+        }
+
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -51,6 +57,7 @@
         showImages();
         setupRandomImageButton();
         setupShowAllButton();
+        setupHideAllButton();
     });
 
     function changeBackgroundColor() {
@@ -98,6 +105,13 @@
         });
     }
 
+    function setupHideAllButton() {
+        var hideAllButton = document.querySelector(".hide-all-button");
+        hideAllButton.addEventListener("click", function() {
+            hideAllImages();
+        });
+    }
+
     function showRandomImage() {
         var images = document.querySelectorAll(".image");
 
@@ -117,11 +131,21 @@
             images[i].style.display = "block";
         }
     }
+
+    function hideAllImages() {
+        var images = document.querySelectorAll(".image");
+        for (var i = 0; i < images.length; i++) {
+            images[i].style.display = "none";
+        }
+    }
 </script>
+
+<div class="page-title">CS2 Oyunun En Pahalı Itemleri (1000 Dolar - 1.5 Milyon Dolar)</div>
 
 <div class="button-container">
     <button class="random-image-button">Rastgele Görsel Oluştur</button>
     <button class="show-all-button">Tümünü Göster</button>
+    <button class="hide-all-button">Tümünü Gizle</button>
 </div>
 
 <div class="image-container"></div>
