@@ -22,18 +22,10 @@
             cursor: pointer;
         }
 
-        .modal {
-            display: none;
+        .announcement {
+            opacity: 0;
+            visibility: hidden;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -41,6 +33,17 @@
             padding: 20px;
             border-radius: 10px;
             text-align: center;
+            transition: opacity 0.5s, visibility 0.5s;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translate(-50%, -70%);
+            }
+            to {
+                transform: translate(-50%, -50%);
+            }
         }
 
         .close {
@@ -56,31 +59,38 @@
 
     <button id="openModalBtn">Tıklama!</button>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModalBtn">&times;</span>
-            <h2>Beklenmeyen bir hata oldu!</h2>
-            <p>Bilgisayarını ele geçirdim :)</p>
-        </div>
+    <div id="announcement" class="announcement">
+        <span class="close" id="closeModalBtn">&times;</span>
+        <h2>Beklenmeyen bir hata oldu!</h2>
+        <p>Bilgisayarını ele geçirdim :)</p>
     </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var openModalBtn = document.getElementById("openModalBtn");
             var closeModalBtn = document.getElementById("closeModalBtn");
-            var modal = document.getElementById("myModal");
+            var announcement = document.getElementById("announcement");
 
             openModalBtn.addEventListener("click", function () {
-                modal.style.display = "block";
+                announcement.style.opacity = "1";
+                announcement.style.visibility = "visible";
+                
+                // Close the announcement after 5 seconds
+                setTimeout(function () {
+                    announcement.style.opacity = "0";
+                    announcement.style.visibility = "hidden";
+                }, 5000);
             });
 
             closeModalBtn.addEventListener("click", function () {
-                modal.style.display = "none";
+                announcement.style.opacity = "0";
+                announcement.style.visibility = "hidden";
             });
 
             window.addEventListener("click", function (event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
+                if (event.target == announcement) {
+                    announcement.style.opacity = "0";
+                    announcement.style.visibility = "hidden";
                 }
             });
         });
