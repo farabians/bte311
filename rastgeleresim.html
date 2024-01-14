@@ -115,12 +115,10 @@
     function showRandomImage() {
         var images = document.querySelectorAll(".image");
 
-        // Tüm resimleri gizle
         for (var i = 0; i < images.length; i++) {
             images[i].style.display = "none";
         }
 
-        // Belirli bir resmi göster
         var randomIndex = Math.floor(Math.random() * images.length);
         images[randomIndex].style.display = "block";
     }
