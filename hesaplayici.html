@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Zamanlayıcı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .timer {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .money {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #input-container {
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">00:00:00:00:00:00</div>
+    <div class="money" id="money">0 TL</div>
+    <div id="input-container">
+        <input type="number" id="amount" placeholder="Miktar Girin">
+        <button onclick="addMoney()">Ekle</button>
+        <button onclick="startTimer()">Süreyi Başlat</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
