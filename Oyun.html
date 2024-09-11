@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askerli Şehir Fetih Oyunu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        
+        .base {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            border-radius: 50%;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            line-height: 50px;
+        }
+        #redBase {
+            background-color: red;
+            top: 100px;
+            left: 100px;
+        }
+        #blueBase {
+            background-color: blue;
+            top: 300px;
+            left: 200px;
+        }
+        #greenBase {
+            background-color: green;
+            top: 500px;
+            left: 400px;
+        }
+        #yellowBase {
+            background-color: yellow;
+            top: 200px;
+            left: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="gameMap">
+    <div id="redBase" class="base">0</div>
+    <div id="blueBase" class="base">0</div>
+    <div id="greenBase" class="base">0</div>
+    <div id="yellowBase" class="base">0</div>
+</div>
+
+<script>
+    let redBaseCount = 0;
+    let blueBaseCount = 0;
+    let greenBaseCount = 0;
+    let yellowBaseCount = 0;
+
+    function increaseSoldiers() {
+        redBaseCount++;
+        blueBaseCount++;
+        greenBaseCount++;
+        yellowBaseCount++;
+
+        document.getElementById('redBase').textContent = redBaseCount;
+        document.getElementById('blueBase').textContent = blueBaseCount;
+        document.getElementById('greenBase').textContent = greenBaseCount;
+        document.getElementById('yellowBase').textContent = yellowBaseCount;
+    }
+
+    setInterval(increaseSoldiers, 1000); // 1 saniyede 1 asker ekleniyor
+</script>
+
+</body>
+</html>
